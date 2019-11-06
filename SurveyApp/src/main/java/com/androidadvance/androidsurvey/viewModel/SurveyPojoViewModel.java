@@ -2,16 +2,14 @@ package com.androidadvance.androidsurvey.viewModel;
 
 import android.app.Application;
 
+import com.androidadvance.androidsurvey.db.SurveyRepository;
+import com.androidadvance.androidsurvey.models.SurveyTobeSaved;
+
+import java.util.List;
+
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-
-import com.androidadvance.androidsurvey.models.SurveyPojo;
-import com.androidadvance.androidsurvey.models.SurveyProperties;
-import com.androidadvance.androidsurvey.models.SurveyTobeSaved;
-import com.androidadvance.androidsurvey.roomDatabase.SurveyRepository;
-
-import java.util.List;
 
 public class SurveyPojoViewModel extends AndroidViewModel {
 

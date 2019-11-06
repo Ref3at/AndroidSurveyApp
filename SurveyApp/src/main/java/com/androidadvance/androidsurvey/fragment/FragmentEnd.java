@@ -2,8 +2,6 @@ package com.androidadvance.androidsurvey.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,11 +10,14 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.androidadvance.androidsurvey.SessionReference;
 import com.androidadvance.androidsurvey.R;
+import com.androidadvance.androidsurvey.SessionReference;
 import com.androidadvance.androidsurvey.SurveyActivity;
 import com.androidadvance.androidsurvey.models.SurveyProperties;
 import com.androidadvance.androidsurvey.utilities.Fonts;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
 public class FragmentEnd extends Fragment {
 
@@ -43,7 +44,7 @@ public class FragmentEnd extends Fragment {
         button_finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                // after survay complete send object to save
                 ((SurveyActivity) mContext).event_survey_completed(SessionReference.getInstance());
 
             }

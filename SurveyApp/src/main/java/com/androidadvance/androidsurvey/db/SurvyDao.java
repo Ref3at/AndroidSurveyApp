@@ -1,15 +1,14 @@
-package com.androidadvance.androidsurvey.roomDatabase;
+package com.androidadvance.androidsurvey.db;
+
+import com.androidadvance.androidsurvey.models.SurveyTobeSaved;
+
+import java.util.List;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
-
-import com.androidadvance.androidsurvey.models.SurveyPojo;
-import com.androidadvance.androidsurvey.models.SurveyTobeSaved;
-
-import java.util.List;
 
 @Dao
 public interface SurvyDao {

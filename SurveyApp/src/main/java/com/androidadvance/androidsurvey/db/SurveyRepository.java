@@ -1,14 +1,13 @@
-package com.androidadvance.androidsurvey.roomDatabase;
+package com.androidadvance.androidsurvey.db;
 
 import android.app.Application;
 import android.os.AsyncTask;
 
-import androidx.lifecycle.LiveData;
-
-import com.androidadvance.androidsurvey.models.SurveyPojo;
 import com.androidadvance.androidsurvey.models.SurveyTobeSaved;
 
 import java.util.List;
+
+import androidx.lifecycle.LiveData;
 
 public class SurveyRepository {
 

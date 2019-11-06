@@ -1,10 +1,6 @@
 package com.androidadvance.androidsurvey;
 
-import com.androidadvance.androidsurvey.models.SurveyPojo;
 import com.androidadvance.androidsurvey.models.SurveyTobeSaved;
-import com.google.gson.Gson;
-
-import java.util.LinkedHashMap;
 
 //Singleton SessionReference ........
 
@@ -19,7 +15,7 @@ public class SessionReference {
     }
 
     public void setName(String userName) {
-        this.mSurveyTobeSaved.userName = userName;
+        this.mSurveyTobeSaved.setUserName(userName);
     }
 
 
