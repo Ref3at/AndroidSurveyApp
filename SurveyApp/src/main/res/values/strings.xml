@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AndroidSurvey</string>
+    <string name="xcontinue">Continue</string>
+    <string name="start">Start</string>
+    <string name="close">Close</string>
+    <string name="finish">Finish</string>
+    <string name="enter_your_name">Enter Your Name</string>
+    <string name="information_question">information question</string>
+    <string name="your_survay">your survay</string>
+    <string name="personal_question">personal Question</string>
+</resources>
