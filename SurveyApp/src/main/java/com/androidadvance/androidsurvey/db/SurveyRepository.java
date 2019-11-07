@@ -3,11 +3,11 @@ package com.androidadvance.androidsurvey.db;
 import android.app.Application;
 import android.os.AsyncTask;
 
+import androidx.lifecycle.LiveData;
+
 import com.androidadvance.androidsurvey.models.SurveyTobeSaved;
 
 import java.util.List;
-
-import androidx.lifecycle.LiveData;
 
 public class SurveyRepository {
 
@@ -17,7 +17,7 @@ public class SurveyRepository {
 
 
     public SurveyRepository(Application application) {
-        SurveysRoomDataBase db = SurveysRoomDataBase.getDatabase(application);
+        AppDatabase db = AppDatabase.getDatabase(application);
         mSurvyDao = db.survyDao();
         mAllSurveys = mSurvyDao.getAllSurveys();
     }

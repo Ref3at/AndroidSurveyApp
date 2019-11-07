@@ -1,35 +1,36 @@
 package com.androidadvance.androidsurvey.models;
 
-import java.util.Date;
-import java.util.LinkedHashMap;
-
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
+
+import java.util.Date;
+import java.util.LinkedHashMap;
 
 @Entity(tableName = "savedSurveys")
 public class SurveyTobeSaved {
 
 
-    // @TypeConverters(LinkedHashMapConverters.class)
-    public LinkedHashMap<String, String> questionsAndAnswersHashmap = new LinkedHashMap<>();
+
     @PrimaryKey(autoGenerate = true)
     private int id;
     private String userName;
-    //@TypeConverters(DateConverter.class)
+    public LinkedHashMap<String, String> questionsAndAnswersHashmap = new LinkedHashMap<>();
     private Date date;
     private String signaturePath;
+
 
     @Ignore
     public SurveyTobeSaved() {
 
     }
 
-    public SurveyTobeSaved(int id, String userName, Date date, String signaturePath) {
+    public SurveyTobeSaved(int id, String userName, String signaturePath, Date date, LinkedHashMap<String, String> questionsAndAnswersHashmap) {
         this.id = id;
         this.userName = userName;
-        this.date = date;
         this.signaturePath = signaturePath;
+        this.date = date;
+        this.questionsAndAnswersHashmap = questionsAndAnswersHashmap;
     }
 
     public int getId() {
