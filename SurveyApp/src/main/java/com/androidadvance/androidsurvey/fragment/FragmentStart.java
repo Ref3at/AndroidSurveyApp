@@ -2,12 +2,6 @@ package com.androidadvance.androidsurvey.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-
-import com.androidadvance.androidsurvey.SessionReference;
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import android.text.Editable;
 import android.text.Html;
 import android.text.TextUtils;
@@ -19,10 +13,16 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+
 import com.androidadvance.androidsurvey.R;
+import com.androidadvance.androidsurvey.SessionReference;
 import com.androidadvance.androidsurvey.SurveyActivity;
 import com.androidadvance.androidsurvey.models.SurveyProperties;
 import com.androidadvance.androidsurvey.utilities.Fonts;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 
 public class FragmentStart extends Fragment {
@@ -38,15 +38,16 @@ public class FragmentStart extends Fragment {
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(
                 R.layout.fragment_start, container, false);
-
+        //initView
          txtUserName=  rootView.findViewById(R.id.txt_user_name);
          etxtUserName =  rootView.findViewById(R.id.etxt_user_name);
-
-
         textView_start = (TextView) rootView.findViewById(R.id.textView_start);
-        Fonts.set(textView_start, getContext());
         Button button_continue = (Button) rootView.findViewById(R.id.button_continue);
+
+        Fonts.set(textView_start, getContext());
         Fonts.set(button_continue, getContext());
+        Fonts.set(etxtUserName, getContext());
+
         button_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

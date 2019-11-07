@@ -3,14 +3,14 @@ package com.androidadvance.androidsurvey;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager.widget.ViewPager;
-import androidx.appcompat.app.AppCompatActivity;
-import android.util.Log;
 
 import com.androidadvance.androidsurvey.adapters.AdapterFragmentQ;
 import com.androidadvance.androidsurvey.fragment.FragmentCheckboxes;
@@ -20,6 +20,7 @@ import com.androidadvance.androidsurvey.fragment.FragmentNumber;
 import com.androidadvance.androidsurvey.fragment.FragmentRadioboxes;
 import com.androidadvance.androidsurvey.fragment.FragmentStart;
 import com.androidadvance.androidsurvey.fragment.FragmentTextSimple;
+import com.androidadvance.androidsurvey.fragment.SmileFragment;
 import com.androidadvance.androidsurvey.models.Question;
 import com.androidadvance.androidsurvey.models.SurveyPojo;
 import com.androidadvance.androidsurvey.models.SurveyTobeSaved;
@@ -85,6 +86,14 @@ public class SurveyActivity extends AppCompatActivity {
 
             if (mQuestion.getQuestionType().equals("String")) {
                 FragmentTextSimple frag = new FragmentTextSimple();
+                Bundle xBundle = new Bundle();
+                xBundle.putSerializable("data", mQuestion);
+                xBundle.putString("style", style_string);
+                frag.setArguments(xBundle);
+                arraylist_fragments.add(frag);
+            }
+            if (mQuestion.getQuestionType().equals("smile")) {
+                SmileFragment frag = new SmileFragment();
                 Bundle xBundle = new Bundle();
                 xBundle.putSerializable("data", mQuestion);
                 xBundle.putString("style", style_string);

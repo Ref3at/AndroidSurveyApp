@@ -8,4 +8,8 @@
     <string name="information_question">information question</string>
     <string name="your_survay">your survay</string>
     <string name="personal_question">personal Question</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title">Title</string>
 </resources>

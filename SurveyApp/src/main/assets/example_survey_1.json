@@ -19,6 +19,18 @@
       ]
     },
     {
+      "question_type": "smile",
+      "question_title": "Are you Happy Today?",
+      "description": "",
+      "required": true,
+      "random_choices": true,
+      "choices": [
+        "<font color='#AA0000'>Yes, I use a <strong>red</strong> product</font>",
+        "I use a <font color='#00AA00'>green product</font>",
+        "I partialy use a <font color='#0000AA'><strong>blue</strong></font> product"
+      ]
+    },
+    {
       "question_type": "Checkboxes",
       "question_title": "Do you currently use one of these other software solutions?",
       "description": "",
