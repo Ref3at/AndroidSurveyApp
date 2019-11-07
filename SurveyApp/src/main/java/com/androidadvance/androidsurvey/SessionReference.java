@@ -1,6 +1,10 @@
 package com.androidadvance.androidsurvey;
 
+import android.text.TextUtils;
+
 import com.androidadvance.androidsurvey.models.SurveyTobeSaved;
+
+import java.util.Date;
 
 //Singleton SessionReference ........
 
@@ -11,11 +15,17 @@ public class SessionReference {
 
 
     public void put_answer(String key, String value) {
+        if (TextUtils.isEmpty(value))
+            value = "No Answer!";
         mSurveyTobeSaved.questionsAndAnswersHashmap.put(key, value);
     }
 
     public void setName(String userName) {
         this.mSurveyTobeSaved.setUserName(userName);
+    }
+
+   public void setDate(Date date) {
+        this.mSurveyTobeSaved.setDate(date);
     }
 
 

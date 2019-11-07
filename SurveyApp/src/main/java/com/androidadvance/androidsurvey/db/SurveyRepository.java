@@ -31,6 +31,10 @@ public class SurveyRepository {
         new insertAsyncTask(mSurvyDao).execute(surveyPojo);
     }
 
+    public void deleteAll() {
+        new deleteAsyncTask(mSurvyDao).execute();
+    }
+
     private static class insertAsyncTask extends AsyncTask<SurveyTobeSaved, Void, Void> {
 
         private SurvyDao mAsyncTaskDao;
@@ -42,6 +46,21 @@ public class SurveyRepository {
         @Override
         protected Void doInBackground(final SurveyTobeSaved ... params) {
             mAsyncTaskDao.insert(params[0]);
+            return null;
+        }
+    }
+
+    private static class deleteAsyncTask extends AsyncTask<Void, Void, Void> {
+
+        private SurvyDao mAsyncTaskDao;
+
+        deleteAsyncTask(SurvyDao dao) {
+            mAsyncTaskDao = dao;
+        }
+
+        @Override
+        protected Void doInBackground(final Void ... params) {
+            mAsyncTaskDao.deleteAll();
             return null;
         }
     }

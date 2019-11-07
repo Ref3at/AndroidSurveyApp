@@ -24,6 +24,8 @@ import com.androidadvance.androidsurvey.utilities.Fonts;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.Calendar;
+
 
 public class FragmentStart extends Fragment {
 
@@ -70,6 +72,8 @@ public class FragmentStart extends Fragment {
 
 
                 SessionReference.getInstance().setName(etxtUserName.getText().toString().trim());
+                SessionReference.getInstance().setDate(Calendar.getInstance().getTime());
+
                 ((SurveyActivity) mContext).go_to_next();
 
 

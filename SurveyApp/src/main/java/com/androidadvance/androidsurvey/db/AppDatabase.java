@@ -9,7 +9,7 @@ import androidx.room.TypeConverters;
 
 import com.androidadvance.androidsurvey.models.SurveyTobeSaved;
 
-@Database(entities = {SurveyTobeSaved.class}, version = 6)
+@Database(entities = {SurveyTobeSaved.class}, version = 1)
 @TypeConverters({LinkedHashMapConverters.class, DateConverter.class})
 public abstract class AppDatabase extends RoomDatabase {
     public static final String DATABASE_NAME = "SurveysDatabase.db";

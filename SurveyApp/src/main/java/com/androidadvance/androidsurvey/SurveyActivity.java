@@ -24,7 +24,7 @@ import com.androidadvance.androidsurvey.fragment.SmileFragment;
 import com.androidadvance.androidsurvey.models.Question;
 import com.androidadvance.androidsurvey.models.SurveyPojo;
 import com.androidadvance.androidsurvey.models.SurveyTobeSaved;
-import com.androidadvance.androidsurvey.viewModel.SurveyPojoViewModel;
+import com.androidadvance.androidsurvey.viewModel.SurveyToBeSavedViewModel;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
@@ -32,7 +32,7 @@ import java.util.List;
 
 public class SurveyActivity extends AppCompatActivity {
 
-    private SurveyPojoViewModel mSurveyPojoViewModel;
+    private SurveyToBeSavedViewModel mSurveyPojoViewModel;
 
 
     private SurveyPojo mSurveyPojo;
@@ -47,7 +47,7 @@ public class SurveyActivity extends AppCompatActivity {
 
 
         //view Model sec
-        mSurveyPojoViewModel = new ViewModelProvider(this).get(SurveyPojoViewModel.class);
+        mSurveyPojoViewModel = new ViewModelProvider(this).get(SurveyToBeSavedViewModel.class);
         mSurveyPojoViewModel.getAllSurveys().observe(this, new Observer<List<SurveyTobeSaved>>() {
             @Override
             public void onChanged(@Nullable final List<SurveyTobeSaved> surveyList) {
@@ -172,7 +172,7 @@ public class SurveyActivity extends AppCompatActivity {
     public void event_survey_completed(SessionReference instance) {
 
         Log.d("****", "****************** WE HAVE ANSWERS ******************");
-        Log.v("ANSWERS JSON", new Gson().toJson(instance.mSurveyTobeSaved));
+        Log.e("ANSWERS JSON", new Gson().toJson(instance.mSurveyTobeSaved));
         Log.d("****", "*****************************************************");
 
 

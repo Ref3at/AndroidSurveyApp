@@ -26,9 +26,11 @@ public class MainActivity extends AppCompatActivity {
         Button button_survey_example_1 = (Button) findViewById(R.id.button_survey_example_1);
         Button button_survey_example_2 = (Button) findViewById(R.id.button_survey_example_2);
         Button button_survey_example_3 = (Button) findViewById(R.id.button_survey_example_3);
+        Button button_browse_survey = (Button) findViewById(R.id.button_browse_survey);
         Fonts.set(button_survey_example_1, this);
         Fonts.set(button_survey_example_2, this);
         Fonts.set(button_survey_example_3, this);
+        Fonts.set(button_browse_survey, this);
 
         button_survey_example_1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +60,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(i_survey, SURVEY_REQUEST);
             }
         });
+
+        button_browse_survey.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BrowseSurveysActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 
